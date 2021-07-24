@@ -2,6 +2,8 @@ const express = require('express');
 const logger = require('morgan');
 const PORT = 4000;
 
+require('dotenv').config()
+
 const app = express();
 
 app.set('view engine', 'ejs');
