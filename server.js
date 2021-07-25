@@ -5,6 +5,7 @@ const session = require('express-session');
 const passport = require('passport');
 const PORT = 4000;
 const indexRouter = require('./routes/index');
+
 require('dotenv').config()
 require('./config/passport');
 
@@ -28,5 +29,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/', indexRouter);
+
 
 app.listen(PORT, console.log(`Our server is live on http://localhost:${PORT}`));
