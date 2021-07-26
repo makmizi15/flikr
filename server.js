@@ -6,8 +6,10 @@ const passport = require('passport');
 const PORT = 4000;
 const indexRouter = require('./routes/index');
 
+
 require('dotenv').config()
 require('./config/passport');
+require('./config/database');
 
 //setup express app
 const app = express();
@@ -18,7 +20,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.static('public'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false}));
 app.use(
     session({
         secret: "Flikr",
@@ -29,6 +31,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/', indexRouter);
+
 
 
 app.listen(PORT, console.log(`Our server is live on http://localhost:${PORT}`));
