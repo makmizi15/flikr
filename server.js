@@ -7,10 +7,10 @@ const PORT = 4000;
 const indexRouter = require('./routes/index');
 const postsRouter = require('./routes/posts');
 
-// require('./config/passport');
+
 require('dotenv').config()
 require('./config/database');
-
+require('./config/passport');
 
 //setup express app
 const app = express();
