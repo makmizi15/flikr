@@ -9,7 +9,7 @@ const postsRouter = require('./routes/posts');
 
 
 require('dotenv').config()
-require('./config/passport');
+// require('./config/passport');
 require('./config/database');
 
 //setup express app
