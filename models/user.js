@@ -5,7 +5,7 @@ const userSchema = new Schema({
     userName: String,
     email: String,
     accountCreatedDate: Date,
-    postHistory: [postSchema],
+    //postHistory: [postSchema],
     googleId: String
 
 }, {
