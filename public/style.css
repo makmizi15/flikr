@@ -45,6 +45,14 @@
             padding: 88px 0 0 0;
         }
 
+        button {
+            padding: 8px 12px;
+            border: 1px solid var(--white);
+            border-radius: 999px;
+            background-color: transparent;
+            color: var(--white);
+        }
+
         /* ======== New body ======== */
 
         .inner-body {
@@ -104,6 +112,13 @@
             flex-shrink: 1;
             border: 1px solid var(--white);
             border-radius: 999px;
+        }
+
+        .sign-out {
+            display: inline;
+            width: auto;
+            margin-left: auto;
+            flex-shrink: 1;
         }
 
         /* ======== Search Bar ======== */

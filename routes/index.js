@@ -7,11 +7,14 @@ const indexCtrl = require('../controllers/index');
 
 router.get('/', indexCtrl.index);
 
-router.get('/', function(req,res) {
-    res.render('index', {
-        user: req.user
-    });
-});
+// router.get('/', function(req,res) {
+//     console.log(req.user);
+//     console.log(req);
+//     res.render('index', {
+//         user: req.user
+        
+//     });
+// });
 
 //Google Oauth login route
 router.get(
