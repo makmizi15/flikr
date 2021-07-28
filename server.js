@@ -4,6 +4,7 @@ const logger = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
 const PORT = 4000;
+
 const indexRouter = require('./routes/index');
 const postsRouter = require('./routes/posts');
 
@@ -22,7 +23,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use('/public', express.static('public'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false}));
+app.use(express.urlencoded({ extended: true}));
 app.use(
     session({
         secret: "Flikr",
