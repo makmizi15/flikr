@@ -2,7 +2,6 @@
 const express = require('express');
 const logger = require('morgan');
 const session = require('express-session');
-const passport = require('passport');
 const PORT = 4000;
 const indexRouter = require('./routes/index');
 const postsRouter = require('./routes/posts');
@@ -11,6 +10,7 @@ const postsRouter = require('./routes/posts');
 require('dotenv').config()
 require('./config/database');
 require('./config/passport');
+const passport = require('passport');
 
 //setup express app
 const app = express();
