@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="outter-body">
+    <div class="outter-body black">
         <div class="inner-body">
             <nav>
                 <div><a href="" class="logo">flikr</a></div>
@@ -56,8 +56,37 @@
             </nav>
 
             <main>
-                <div class="add-post-container">
-                    <h2>Create a Review</h2>
+                <div class="post-container margin-bottom-16">
+                    <div class="post-container-hero margin-bottom-40">
+                        <div class="post-btn-wrap white-bg absolute top-right">
+                            <p>204</p>
+                            <a href=""><img src="/public/images/like.svg" class="like-icn"></a>
+                            
+                        </div>
+                        <img class="movie-poster margin-bottom-16" src="/public/images/best movie of all time.jpeg">
+                        <h5 class="username text-white margin-bottom-8">@Username</h5>
+                        <h2>I Love You, Man</h2>
+                        <div class="rating-circle">9/10</div>
+                    </div>
+                    <p class="post-date margin-bottom-8">Posted July 22</p>
+                    <p class="post-title text-white margin-bottom-16">My humble review: this movie was Bomb!</p>
+                    <p>what a gem! i watched it for my love for Paul Rudd but i'm glad i did because this is such a wholesome flick. 
+                        when people talk about male friendships, they usually go about all the stereotypically masculine things guys do together which more or less just reaches as far as young high school/college friendships go. this one goes beyond that. this one shows a true healthy platonic male friendship and its importance in everyone's life in a truly beautiful and entertaining way and how complex adult friendships are compared to the ones we have when we're young and how hard it is to make friends outside of work when we're older. 
+                        it also emphasizes how important it is to have friends outside of a romantic relationship and how those two kinds of relationships are equally essential part of one's life. truly an amazing watch.</p>
+                </div>
+                <div class="post-container margin-bottom-16">
+                    <form id="add-comment-form">
+                        <textarea id="add-comment" name="comment" rows="8" placeholder="Share a comment:"></textarea>
+                        <input class="form-btn absolute bottom-right" type="submit" value="Comment">
+                    </form>
+                </div>
+                <div>
+                    <ul>
+                        <li><div class="post-container margin-bottom-16">
+                            <h5 class="margin-bottom-8">@Username</h5>
+                            <p>Greatest movie of all time</p>
+                        </div></li>
+                    </ul>
                 </div>
             </main>
         </div>

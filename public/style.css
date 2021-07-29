@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+@import url("https://use.typekit.net/ujy8mxc.css");
+
         /* ======== Standard ======== */
 
         * {
@@ -18,16 +20,25 @@
         a {
             color: inherit;
             text-decoration: none;
+            cursor: pointer;
 
         }
 
         body {
             background-color: #820902;
             color: var(--white);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: neue-haas-grotesk-text, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
+            cursor: auto;
         }
 
+
         h2 {
+            font-family: neue-haas-grotesk-display, sans-serif;
+            font-weight: 500;
+            font-style: normal;
             font-size: 32px;
             line-height: 1;
             margin-bottom: 24px;
@@ -35,7 +46,7 @@
 
         p {
             color: var(--p);
-            line-height: 22px;
+            line-height: calc(14px * 1.45);
         }
 
 
@@ -51,6 +62,11 @@
             border-radius: 999px;
             background-color: transparent;
             color: var(--white);
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
         }
 
         /* ======== New body ======== */
@@ -68,6 +84,13 @@
         .outter-body {
             padding: 32px 0px 0px 0px;
             height: 100%;
+            
+        
+
+        }
+        .outter-body.black {
+            background-color: black;
+        
 
         }
 
@@ -79,6 +102,7 @@
             max-width: 1200px;
             margin: 0 auto;
             position: sticky;
+            z-index: 999;
             top: 56px;
         }
 
@@ -189,8 +213,14 @@
             border-radius: 16px;
             margin-top: 24px;
             padding: 24px;
+        }
+
+        .flex {
             display: flex;
             justify-content: space-between;
+        }
+
+        .card-btn {
             cursor: pointer;
         }
 
@@ -199,21 +229,26 @@
         }
 
         .username {
-            color: var(--red);
-            font-size: 15px;
+            color: var(--white);
+            font-size: 12px;
             display: inline;
             margin-right: 8px;
+        }
+
+        .text-white {
+            color: white;
         }
 
         .post-date {
             font-size: 12px;
             color: var(--p);
-            display: inline;
+            display: inline-block;
         }
 
         .movie-title {
             display: inline-block;
             margin-right: 8px;
+            color: white;
         }
 
         .rating {
@@ -221,8 +256,21 @@
             color: var(--white);
         }
 
+        .rating-circle {
+            width: 56px;
+            height: 56px;
+            background-color: var(--red);
+            border-radius: 999px;
+            position: absolute;
+            bottom: -32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .post-title {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            font-size: 20px;
         }
 
     .post-btns-container {
@@ -242,8 +290,25 @@
             align-items: center;
         }
 
+        .post-btn-wrap.white-bg {
+            background-color: transparent;
+        }
+        .post-btn-wrap.white-bg a{
+            margin-left: 8px;
+            margin-right: 0px;
+        }
+
         .post-btn-wrap a{
             margin-right: 8px;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .top-right{
+            top: 8px;
+            right: 8px;
         }
 
         .movie-poster {
@@ -253,4 +318,77 @@
             margin-left: 8px;
             border-radius: 8px;
         }
+
+        .margin-bottom-8{ 
+            margin-bottom: 8px;
+        }
+        
+        .margin-bottom-16 {
+            margin-bottom: 16px;
+        }
+        
+        .margin-bottom-32 {
+            margin-bottom: 32px;
+        }
+        
+        .margin-bottom-40 {
+            margin-bottom: 40px;
+        }
+
+        .post-container-hero {
+            border-radius: 16px;
+            min-height: 360px;
+            width: 100%;
+            background-image: url('/public/images/mesh-gradient.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            
+        }
+
+        /* ==== comment section ==== */
+        #add-comment-form {
+            position: relative;
+        }
+
+
+        #add-comment {
+            width: calc(100% - 16px);
+            background-color: transparent;
+            border: 1px solid #404040;
+            border-radius: 8px;
+            outline: none;
+            color: var(--p);
+            font-family: neue-haas-grotesk-text,sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 22px;
+            padding: 8px;
+            
+        }
+
+        #add-comment::-webkit-input-placeholder {
+            color: #858585;
+        }
+
+        .form-btn {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 999px;
+            background-color: transparent;
+            background-color: var(--red);
+            color: var(--white);
+        }
+
+        .bottom-right{
+            bottom: 8px;
+            right: 8px;
+        }
+
+
+
 
