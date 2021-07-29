@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-    movieTitle: String,
+    movieTitle: {type: String, required: true}, 
     rating: Number,
-    postTitle: String,
+    postTitle: {type: String, required: true}, 
     postDate: Date,
-    comments: [commentSchema],
+    // comments: [commentSchema],
     likeCount: Number,
-    postedBy: [userSchema],
-    movieImgURL: String
+    // postedBy: [userSchema],
+    movieImgURL: {type: String, required: false}, 
 
 }, {
     timestamps: true
