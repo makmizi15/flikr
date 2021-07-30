@@ -68,7 +68,7 @@
                     <% post.forEach(function(c) { %>
                         <% console.log(post); %>
                     <li>
-                        <a href="<%=`posts/new/${post._id}`%>">
+                        <a href="/posts/<%= c._id %>">
                             <div class="post-container flex card-btn margin-bottom-24">
                                 <div class="post-copy">
                                     <div class="post-subheader">

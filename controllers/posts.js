@@ -3,22 +3,13 @@ const User = require('../models/user');
 
 module.exports = {
     create: createPost,
-    new: postPage,
     addComment,
     show
 
 };
 
 function createPost(req,res) {
-    res.render('posts/create', {
-        user: req.user
-    });
-}
-function postPage(req,res) {
-    res.render('posts/:id', {
-        user: req.user,
-    });
-    
+    res.render('posts/create', { user: req.user});
 }
 
 function addComment(req, res) {
@@ -26,7 +17,7 @@ function addComment(req, res) {
         req.comments.push(req.body);
         req.populate('comment');
         post.save(function(err) {
-        res.redirect(`posts/${user._id}`);
+        res.redirect(`posts/${post._id}`);
         
         });
     });
