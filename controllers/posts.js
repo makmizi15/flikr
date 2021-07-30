@@ -24,7 +24,7 @@ function addComment(req, res) {
 };
 
 function show(req, res) {
-    Post.findById(req.params.id, function(err, post) {
+    Post.find({}, function(err, post) {
       res.render('posts/new', {user: req.user, post} );
     });
   }

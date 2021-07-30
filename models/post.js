@@ -8,15 +8,15 @@ const commentSchema = new Schema({
 
 const postSchema = new Schema({
     username: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-    movieTitle: { type: String, required: true },
+    movieTitle: { type: String},
     rating: Number,
-    postTitle: { type: String, required: true },
+    postTitle: { type: String},
     description: String,
     postDate: Date,
     comments: [commentSchema],
     likeCount: Number,
     postedBy: {type: Schema.Types.ObjectId, ref: "User"},
-    movieImgURL: { type: String, required: true },
+    movieImgURL: { type: String},
 
 }, {
     timestamps: true
