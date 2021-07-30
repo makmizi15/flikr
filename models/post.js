@@ -12,7 +12,6 @@ const postSchema = new Schema({
     rating: Number,
     postTitle: { type: String},
     description: String,
-    postDate: Date,
     comments: [commentSchema],
     likeCount: Number,
     postedBy: {type: Schema.Types.ObjectId, ref: "User"},

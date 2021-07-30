@@ -24,8 +24,10 @@ function addComment(req, res) {
 };
 
 function show(req, res) {
-    Post.find({}, function(err, post) {
-      res.render('posts/new', {user: req.user, post} );
+    Post.findById(req.params.id, function(err, post) {
+        console.log(post);
+        res.render('posts/new', {post, user: req.user} );
+      
     });
   }
 

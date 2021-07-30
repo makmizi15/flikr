@@ -64,15 +64,13 @@
                             
                         </div>
                         <img class="movie-poster margin-bottom-16" src="/public/images/best movie of all time.jpeg">
-                        <h5 class="username text-white margin-bottom-8">@Username</h5>
-                        <h2>I Love You, Man</h2>
-                        <div class="rating-circle">9/10</div>
+                        <h5 class="username text-white margin-bottom-8"><%= post.username %></h5>
+                        <h2><%= post.movieTitle %></h2>
+                        <div class="rating-circle"><%= post.rating %></div>
                     </div>
-                    <p class="post-date margin-bottom-8">Posted July 22</p>
-                    <p class="post-title text-white margin-bottom-16">My humble review: this movie was Bomb!</p>
-                    <p>what a gem! i watched it for my love for Paul Rudd but i'm glad i did because this is such a wholesome flick. 
-                        when people talk about male friendships, they usually go about all the stereotypically masculine things guys do together which more or less just reaches as far as young high school/college friendships go. this one goes beyond that. this one shows a true healthy platonic male friendship and its importance in everyone's life in a truly beautiful and entertaining way and how complex adult friendships are compared to the ones we have when we're young and how hard it is to make friends outside of work when we're older. 
-                        it also emphasizes how important it is to have friends outside of a romantic relationship and how those two kinds of relationships are equally essential part of one's life. truly an amazing watch.</p>
+                    <p class="post-date margin-bottom-8"><%= post.createdAt %></p>
+                    <p class="post-title text-white margin-bottom-16"><%= post.postTitle %></p>
+                    <p><%= post.description %></p>
                 </div>
                 
                     <div class="post-container margin-bottom-16">
@@ -83,14 +81,27 @@
                     </div>
                 
                 <div>
+
+                    <!-- ====== ADD COMMENT SECTION NEED HELP ======= -->
+
+                    <% if (post.length) { %>
                     <ul>
-                        <% post.comment.forEach(function(c) { %>
+                        <% post.forEach(function(c) { %>
                         <li><div class="post-container margin-bottom-16">
                             <h5 class="margin-bottom-8"><%= c.username %></h5>
                             <p><%= c.comment %></p>
                         </div></li>
                         <% }); %>
                     </ul>
+                    <% } else { %>
+                        <div class="post-container flex card-btn">
+                            <div class="post-copy">
+                                <h2>No Comments Yet</h2>
+                            </div>
+                        </div>
+                    <% } %>
+
+                    <!-- ====== ADD COMMENT SECTION NEED HELP ======= -->
                 </div>
             </main>
         </div>
