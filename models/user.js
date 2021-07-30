@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     userName: String,
-    email: String,
+    email: {type: String, default: 'Joban@gmail.com'},
     accountCreatedDate: Date,
     //postHistory: [postSchema],
     googleId: String

@@ -49,12 +49,13 @@
                     <main>
                         <h2>Create a Review</h2>
                         <div class="post-container">
-                            <form>
-                                <input type="text" placeholder="Movie Title">
-                                <input type="text" placeholder="Your Rating">
-                                <input type="text" placeholder="Post Title">
-                                <textarea name="description" rows="4 placeholder="Description">
-                                <input type="text" placeholder="Movie Title">
+                            <form method = "POST" action="../">
+                                <input type="text" placeholder="Movie Title" name="movieTitle">
+                                <input type="text" placeholder="Your Rating" name="rating">
+                                <input type="text" placeholder="Post Title" name="postTitle">
+                                <textarea name="description" rows="4" placeholder="Description" name="description"></textarea>
+                                <input type="text" placeholder="Insert a link to your movie image url" name="movieImgUrl">
+                                <button><input type="submit"></button>
                             </form>     
                         </div>
                     </main>

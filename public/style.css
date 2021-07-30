@@ -211,7 +211,6 @@
         .post-container {
             background-color: var(--card);
             border-radius: 16px;
-            margin-top: 24px;
             padding: 24px;
         }
 
@@ -327,6 +326,10 @@
             margin-bottom: 16px;
         }
         
+        .margin-bottom-24 {
+            margin-bottom: 24px;
+        }
+
         .margin-bottom-32 {
             margin-bottom: 32px;
         }

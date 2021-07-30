@@ -9,7 +9,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/public/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="../public/script.js" defer></script>
 
 </head>
@@ -31,65 +32,92 @@
                     <% if (user) { %>
                         <a href=""><img src="" class="user-icon"></a>
                         <a href="/logout" class="sign-out"><button>Sign Out</button></a>
-                    <% } else { %>
-                        <a href="/auth/google" class="google-btn">
-                            <?xml version="1.0" encoding="UTF-8"?>
-                            <svg width="191px" height="46px" viewBox="0 0 191 46" version="1.1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <title>btn_google_signin_dark_disabled_web@2x</title>
-                                <g id="Google-Button" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="btn_google_signin_dark_disabled_web-copy-2"
-                                        transform="translate(-1.000000, -1.000000)" fill="#FFFFFF">
-                                        <text id="Sign-in-with-Google" font-family="Roboto-Medium, Roboto" font-size="14"
-                                            font-weight="400" letter-spacing="0.21875">
-                                            <tspan x="54" y="29">Sign in with Google</tspan>
-                                        </text>
-                                        <path
-                                            d="M24.001,25.71 L24.001,22.362 L32.425,22.362 C32.551,22.929 32.65,23.46 32.65,24.207 C32.65,29.346 29.203,33 24.01,33 C19.042,33 15.01,28.968 15.01,24 C15.01,19.032 19.042,15 24.01,15 C26.44,15 28.474,15.891 30.031,17.349 L27.475,19.833 C26.827,19.221 25.693,18.501 24.01,18.501 C21.031,18.501 18.601,20.976 18.601,24.009 C18.601,27.042 21.031,29.517 24.01,29.517 C27.457,29.517 28.726,27.132 28.96,25.719 L24.001,25.719 L24.001,25.71 Z"
-                                            id="Shape-Copy"></path>
+                        <% } else { %>
+                            <a href="/auth/google" class="google-btn">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <svg width="191px" height="46px" viewBox="0 0 191 46" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <title>btn_google_signin_dark_disabled_web@2x</title>
+                                    <g id="Google-Button" stroke="none" stroke-width="1" fill="none"
+                                        fill-rule="evenodd">
+                                        <g id="btn_google_signin_dark_disabled_web-copy-2"
+                                            transform="translate(-1.000000, -1.000000)" fill="#FFFFFF">
+                                            <text id="Sign-in-with-Google" font-family="Roboto-Medium, Roboto"
+                                                font-size="14" font-weight="400" letter-spacing="0.21875">
+                                                <tspan x="54" y="29">Sign in with Google</tspan>
+                                            </text>
+                                            <path
+                                                d="M24.001,25.71 L24.001,22.362 L32.425,22.362 C32.551,22.929 32.65,23.46 32.65,24.207 C32.65,29.346 29.203,33 24.01,33 C19.042,33 15.01,28.968 15.01,24 C15.01,19.032 19.042,15 24.01,15 C26.44,15 28.474,15.891 30.031,17.349 L27.475,19.833 C26.827,19.221 25.693,18.501 24.01,18.501 C21.031,18.501 18.601,20.976 18.601,24.009 C18.601,27.042 21.031,29.517 24.01,29.517 C27.457,29.517 28.726,27.132 28.96,25.719 L24.001,25.719 L24.001,25.71 Z"
+                                                id="Shape-Copy"></path>
+                                        </g>
                                     </g>
-                                </g>
-                            </svg>
-                        </a>
-                    <% } %>
+                                </svg>
+                            </a>
+                            <% } %>
                 </div>
             </nav>
 
             <main>
-                <div class="add-post-container">
+                <div class="add-post-container margin-bottom-24">
                     <h2>Create a Review</h2>
                     <button class="add-post-btn" onclick="location.href='http://localhost:4000/posts/create'">+</button>
-                    
+
                 </div>
-                <a href="">
+                <% if (post.length) { %>
+                <ul>
+                    <% post.forEach(function(c) { %>
+                        <% console.log(post); %>
+                    <li>
+                        <a href="<%=`posts/new/${post._id}`%>">
+                            <div class="post-container flex card-btn margin-bottom-24">
+                                <div class="post-copy">
+                                    <div class="post-subheader">
+
+                                        <!-- ========= HOW TF DO WE FIND THE USERNAME???? ========= -->
+
+                                        <h5 class="username"><%= c._id %></h5>
+
+                                        <!-- ========= HOW TF DO WE FIND THE USERNAME???? ========= -->
+
+                                        <p class="post-date"><%= c.createdAt %></p>
+                                    </div>
+                                    <h2 class="movie-title"><%= c.movieTitle %></h2>
+                                    <p class="rating"><%= c.rating %></p>
+                                    <p class="post-title"><%= c.postTitle %></p>
+
+                                    <!-- How do we set a max length to description? -->
+
+                                    <p><%= c.description.substring(0, 152) %>...</p>
+                                    <div class="post-btns-container">
+                                        <div class="post-btn-wrap">
+                                            <a href=""><img src="/public/images/like.svg" class="like-icn"></a>
+                                            <p>204</p>
+                                        </div>
+                                        <div class="post-btn-wrap">
+                                            <a href=""><img src="/public/images/comment.svg" class="comment-icn"></a>
+                                            <p>8</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ============== ASK FOR HELP!!!! ============== -->
+
+                                <img src="<%= `${post.movieImgUrl}` %>>" class="movie-poster">
+
+                                <!-- ============== ASK FOR HELP!!!! ============== -->
+                            </div>
+                        </a>
+                    </li>
+                    <%});%>
+                </ul>
+                <% } else { %>
                     <div class="post-container flex card-btn">
                         <div class="post-copy">
-                            <div class="post-subheader">
-                                <h5 class="username">Username</h5>
-                                <p class="post-date">Posted July 22</p>
-                            </div>
-                            <h2 class="movie-title">I love you man</h2>
-                            <p class="rating">9.5/10</p>
-                            <p class="post-title">My humble review: this movie was Bomb!</p>
-
-                            <!-- How do we set a max length to description? -->
-
-                            <p>what a gem! i watched it for my love for Paul Rudd but i'm glad i did because this is
-                                such a wholesome flick. when people talk about male friendships...</p>
-                            <div class="post-btns-container">
-                                <div class="post-btn-wrap">
-                                    <a href=""><img src="/public/images/like.svg" class="like-icn"></a>
-                                    <p>204</p>
-                                </div>
-                                <div class="post-btn-wrap">
-                                    <a href=""><img src="/public/images/comment.svg" class="comment-icn"></a>
-                                    <p>8</p>
-                                </div>
-                            </div>
+                            <h2>No Reviews Yet</h2>
                         </div>
-                        <img src="/public/images/best movie of all time.jpeg" class="movie-poster">
                     </div>
-                </a>
+                    <% } %>
+
             </main>
         </div>
     </div>
