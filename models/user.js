@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    userName: String,
-    email: String,
+    userName: { type: String, required: true },
+    email: { type: String, required: true },
     accountCreatedDate: Date,
     //postHistory: [postSchema],
-    googleId: String
+    googleId: { type: String, required: true },
 
 }, {
     timestamps: true
