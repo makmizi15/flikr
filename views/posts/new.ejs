@@ -15,8 +15,8 @@
 </head>
 
 <body>
-    <div class="outter-body black">
-        <div class="inner-body">
+    <div class="outter-body black noisy">
+        <div class="inner-body noisy">
             <nav>
                 <div><a href="../" class="logo">flikr</a></div>
                 <!-- <div class="search-container">
@@ -58,17 +58,12 @@
             <main>
                 <div class="post-container margin-bottom-16">
                     <div class="post-container-hero margin-bottom-40">
-                        <div class="post-btn-wrap white-bg absolute top-right">
-                            <p>204</p>
-                            <a href=""><img src="/public/images/like.svg" class="like-icn"></a>
-                            
-                        </div>
-                        <img class="movie-poster margin-bottom-16" src="/public/images/best movie of all time.jpeg">
+                        <img class="movie-poster margin-bottom-16" src="<%- post.movieImgUrl%>">
                         <h5 class="username text-white margin-bottom-8"><%= post._id %></h5>
                         <h2><%= post.movieTitle %></h2>
-                        <div class="rating-circle"><%= post.rating %></div>
+                        <div class="rating-circle"><%= post.rating %>/10</div>
                     </div>
-                    <p class="post-date margin-bottom-8"><%= post.createdAt %></p>
+                    <p class="post-date margin-bottom-8"><%= post.createdAt.toLocaleDateString("en-US") %></p>
                     <p class="post-title text-white margin-bottom-16"><%= post.postTitle %></p>
                     <p><%= post.description %></p>
                 </div>

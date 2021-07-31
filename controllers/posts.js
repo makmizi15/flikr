@@ -20,14 +20,6 @@ function addComment(req, res, next) {
         });
     });
 };
-function editComment(req, res, next) {
-    Post.findByIdAndUpdate(req.params.id, function (err, post) {
-        post.comments.push(req.body);
-        post.save(function(err) {
-            res.redirect('back');
-        });
-    });
-};
 
     
 function show(req, res) {

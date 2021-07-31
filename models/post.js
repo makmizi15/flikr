@@ -17,7 +17,7 @@ const postSchema = new Schema({
     description: { type: String, default: '...'},
     comments: [commentSchema],
     likeCount: Number,
-    movieImgURL: { type: String, default: 'https://www.brownweinraub.com/wp-content/uploads/2017/09/placeholder.jpg'}
+    movieImgUrl: { type: String, default: 'https://www.brownweinraub.com/wp-content/uploads/2017/09/placeholder.jpg'}
 
 }, {
     timestamps: true

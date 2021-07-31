@@ -8,6 +8,7 @@ module.exports = {
 function index(req,res) {
     console.log(req.user);
     Post.find({}, function (err, post) {
+        console.log(post);
         res.render('index', {
             post,
             user: req.user
