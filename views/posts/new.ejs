@@ -64,7 +64,7 @@
                             
                         </div>
                         <img class="movie-poster margin-bottom-16" src="/public/images/best movie of all time.jpeg">
-                        <h5 class="username text-white margin-bottom-8"><%= user.email %></h5>
+                        <h5 class="username text-white margin-bottom-8"><%= post._id %></h5>
                         <h2><%= post.movieTitle %></h2>
                         <div class="rating-circle"><%= post.rating %></div>
                     </div>
@@ -72,31 +72,33 @@
                     <p class="post-title text-white margin-bottom-16"><%= post.postTitle %></p>
                     <p><%= post.description %></p>
                 </div>
-                
+                    
+                    
                     <div class="post-container margin-bottom-16">
                         <form id="add-comment-form" method="POST" action="/posts/<%= post._id %>">
                             <textarea id="add-comment" name="comment" rows="8" placeholder="Share a comment:"></textarea>
                             <input class="form-btn absolute bottom-right" type="submit" value="Comment">
                         </form>
                     </div>
+                    
                 
                 <div>
 
                     <!-- ====== ADD COMMENT SECTION NEED HELP ======= -->
 
-                    <% if (post.comment.length) { %>
+                    <% if (post.comments.length) { %>
                     <ul>
-                        <% post.comment.forEach(function(c) { %>
+                        <% post.comments.forEach(function(c) { %>
                         <li><div class="post-container margin-bottom-16">
-                            <h5 class="margin-bottom-8"><%= c.username %></h5>
+                            <h5 class="margin-bottom-8"><%= c._id %></h5>
                             <p><%= c.comment %></p>
                         </div></li>
                         <% }); %>
                     </ul>
                     <% } else { %>
-                        <div class="post-container flex card-btn">
+                        <div class="post-container">
                             <div class="post-copy">
-                                <h2>No Comments Yet</h2>
+                                <h2 class="margin-bottom-8">No Comments Yet</h2>
                             </div>
                         </div>
                     <% } %>

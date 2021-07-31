@@ -75,7 +75,7 @@
 
                                         <!-- ========= HOW TF DO WE FIND THE USERNAME???? ========= -->
 
-                                        <h5 class="username"><%= user.email %></h5>
+                                        <h5 class="username"><%= c._id %></h5>
 
                                         <!-- ========= HOW TF DO WE FIND THE USERNAME???? ========= -->
 
@@ -85,14 +85,16 @@
                                     <p class="rating"><%= c.rating %></p>
                                     <p class="post-title"><%= c.postTitle %></p>
 
-                                    <p><%= c.description.substring(0, 152) %>...</p>
+                                    <p>
+                                        <%= c.description.substring(0, 152) %>...
+                                    </p>
                                     <div class="post-btns-container">
                                         <div class="post-btn-wrap">
-                                            <a href=""><img src="/public/images/like.svg" class="like-icn"></a>
+                                            <img src="/public/images/like.svg" class="like-icn">
                                             <p>204</p>
                                         </div>
                                         <div class="post-btn-wrap">
-                                            <a href=""><img src="/public/images/comment.svg" class="comment-icn"></a>
+                                            <img src="/public/images/comment.svg" class="comment-icn">
                                             <p>8</p>
                                         </div>
                                     </div>
@@ -100,7 +102,7 @@
 
                                 <!-- ============== ASK FOR HELP!!!! ============== -->
 
-                                <img src="https://<%= c.movieImgUrl.substring(7) %>" class="movie-poster">
+                                <img src="https://<%= c.movieImgUrl %>" class="movie-poster">
 
                                 <!-- ============== ASK FOR HELP!!!! ============== -->
                             </div>
