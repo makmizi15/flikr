@@ -4,10 +4,8 @@ module.exports = {
     create: createPost,
     addComment,
     deleteComment,
-    show,
-    
-   
-
+    editComment,
+    show
 };
 
 function createPost(req,res) {
@@ -23,6 +21,7 @@ function addComment(req, res) {
     });
 };
 
+
 function deleteComment(req, res) {
     Post.findByIdAndDelete(req.params.id, function (err, post) {
         if (err) console.log(err);
@@ -31,6 +30,15 @@ function deleteComment(req, res) {
 
 };
 
+
+function editComment(req, res, next) {
+    Post.findByIdAndUpdate(req.params.id, function (err, post) {
+        post.comments.push(req.body);
+        post.save(function(err) {
+            res.redirect('back');
+        });
+    });
+};
 
 
 // function addComment(req, res) {
@@ -44,8 +52,8 @@ function deleteComment(req, res) {
 //         res.redirect('back');
 //     });
 // };
-    
 
+    
 function show(req, res) {
     Post.findById(req.params.id, function(err, post) {
         console.log(post);

@@ -214,6 +214,10 @@
             padding: 24px;
         }
 
+        .post-copy {
+            position: relative;
+        }
+
         .flex {
             display: flex;
             justify-content: space-between;
@@ -228,7 +232,7 @@
         }
 
         .username {
-            color: var(--white);
+            color: var(--p);
             font-size: 12px;
             display: inline;
             margin-right: 8px;
@@ -280,10 +284,8 @@
 
         .post-btn-wrap {
             display: inline-flex;
-            margin-right: 8px;
+            margin-right: 16px;
             width: auto;
-            background-color: var(--red);
-            padding: 8px;
             border-radius: 12px;
             justify-content: center;
             align-items: center;
@@ -297,7 +299,7 @@
             margin-right: 0px;
         }
 
-        .post-btn-wrap a{
+        .post-btn-wrap img{
             margin-right: 8px;
         }
 
@@ -305,9 +307,14 @@
             position: absolute;
         }
 
-        .top-right{
+        .top-right-8px{
             top: 8px;
             right: 8px;
+        }
+
+        .bottom-left{
+            bottom: 0px;
+            left: 0px;
         }
 
         .movie-poster {
@@ -391,6 +398,49 @@
             bottom: 8px;
             right: 8px;
         }
+
+        /* ==== Create Review Form ==== */
+
+        input[type="text"], select, textarea{
+            display: block;
+            margin-bottom: 16px;
+            background-color: transparent;
+            border: 1px solid #404040;
+            border-radius: 16px;
+            padding: 16px;
+            outline: none;
+        }
+        input[type="text"], textarea {
+            width: calc(100% - 32px);
+            color: white;
+        }
+
+        select {
+            width: 100%;
+            color: #404040;
+        }
+
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: #404040;
+          }
+          ::-moz-placeholder { /* Firefox 19+ */
+            color: #404040;
+          }
+          :-ms-input-placeholder { /* IE 10+ */
+            color: #404040;
+          }
+          :-moz-placeholder { /* Firefox 18- */
+            color: #404040;
+          }
+
+        .big-red{
+            width: 100%;
+            background-color: var(--red);
+            border: none;
+            padding: 16px;
+        }
+        
+          
 
 
 
