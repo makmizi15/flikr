@@ -3,6 +3,7 @@ const express = require('express');
 const logger = require('morgan');
 const session = require('express-session');
 const PORT = 4000;
+const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/index');
 const postsRouter = require('./routes/posts');
@@ -24,6 +25,7 @@ app.use(logger('dev'));
 app.use('/public', express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
+app.use(methodOverride('_method'));
 app.use(
     session({
         secret: "Flikr",
