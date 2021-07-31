@@ -60,7 +60,7 @@
             <main>
                 <div class="add-post-container margin-bottom-24">
                     <h2>Create a Review</h2>
-                    <button class="add-post-btn" onclick="location.href='http://localhost:4000/posts/create'">+</button>
+                    <button class="add-post-btn" onclick="location.href='http://localhost:4000/posts/create'"><img src="/public/images/noun_Plus_2310572.svg"></button>
 
                 </div>
                 <% if (post.length) { %>
@@ -69,7 +69,7 @@
                         <% console.log(post); %>
                     <li>
                         <a href="/posts/<%= c._id %>">
-                            <div class="post-container flex card-btn margin-bottom-24">
+                            <div class="post-container hero flex-space-between card-btn margin-bottom-24">
                                 <div class="post-copy">
                                     <div class="post-subheader">
 
@@ -81,8 +81,12 @@
 
                                         <p class="post-date"><%= c.createdAt.toLocaleDateString("en-US") %></p>
                                     </div>
-                                    <h2 class="movie-title"><%= c.movieTitle %></h2>
-                                    <p class="rating"><%= c.rating %>/10</p>
+                                    <div class="post-card-header flex-middle">
+                                        <h2 class="movie-title"><%= c.movieTitle %></h2>
+                                        <div class="rating-container">
+                                            <p class="rating is--gradient"><%= c.rating %>/10</p>
+                                        </div>
+                                    </div>
                                     <p class="post-title"><%= c.postTitle %></p>
 
                                     <p>
@@ -90,19 +94,15 @@
                                     </p>
                                     <div class="post-btns-container absolute bottom-left">
                                         <div class="post-btn-wrap">
-                                            <img src="/public/images/like.svg" class="like-icn">
-                                            <p>204</p>
-                                        </div>
-                                        <div class="post-btn-wrap">
                                             <img src="/public/images/comment.svg" class="comment-icn">
-                                            <p>8</p>
+                                            <p><%= c.comments.length %></p>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- ============== ASK FOR HELP!!!! ============== -->
 
-                                <img src="https://<%= c.movieImgUrl %>" class="movie-poster">
+                                <img src="<%- c.movieImgUrl%>" class="movie-poster">
 
                                 <!-- ============== ASK FOR HELP!!!! ============== -->
                             </div>
@@ -111,7 +111,7 @@
                     <%});%>
                 </ul>
                 <% } else { %>
-                    <div class="post-container flex card-btn">
+                    <div class="post-container flex-space-between card-btn">
                         <div class="post-copy">
                             <h2>No Reviews Yet</h2>
                         </div>
