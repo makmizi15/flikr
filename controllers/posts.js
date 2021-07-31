@@ -3,7 +3,8 @@ const Post = require('../models/post');
 module.exports = {
     create: createPost,
     addComment,
-    show
+    show,
+    editComment
 
 };
 
@@ -19,21 +20,16 @@ function addComment(req, res, next) {
         });
     });
 };
+function editComment(req, res, next) {
+    Post.findByIdAndUpdate(req.params.id, function (err, post) {
+        post.comments.push(req.body);
+        post.save(function(err) {
+            res.redirect('back');
+        });
+    });
+};
 
-
-// function addComment(req, res) {
-//     const comment = new Comment(req.body);
-//     comment.save(function (err) {
-//         if (err) return res.render('posts/new', {
-//             comment,
-//         });
-//         console.log(comment);
-//     // for now, redirect right back to new.ejs
-//         res.redirect('back');
-//     });
-// };
     
-
 function show(req, res) {
     Post.findById(req.params.id, function(err, post) {
         console.log(post);

@@ -79,16 +79,16 @@
 
                                         <!-- ========= HOW TF DO WE FIND THE USERNAME???? ========= -->
 
-                                        <p class="post-date"><%= c.createdAt %></p>
+                                        <p class="post-date"><%= c.createdAt.toLocaleDateString("en-US") %></p>
                                     </div>
                                     <h2 class="movie-title"><%= c.movieTitle %></h2>
-                                    <p class="rating"><%= c.rating %></p>
+                                    <p class="rating"><%= c.rating %>/10</p>
                                     <p class="post-title"><%= c.postTitle %></p>
 
                                     <p>
                                         <%= c.description.substring(0, 152) %>...
                                     </p>
-                                    <div class="post-btns-container">
+                                    <div class="post-btns-container absolute bottom-left">
                                         <div class="post-btn-wrap">
                                             <img src="/public/images/like.svg" class="like-icn">
                                             <p>204</p>

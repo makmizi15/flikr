@@ -53,13 +53,25 @@
                     <main>
                         <h2>Create a Review</h2>
                         <div class="post-container">
-                            <form method = "POST" action="../">
+                            <form class="create-post-form" method = "POST" action="../">
                                 <input type="text" placeholder="Movie Title" name="movieTitle">
-                                <input type="text" placeholder="Your Rating" name="rating">
+                                <select name="rating">
+                                    <option value="" selected disabled>Select your rating</option>
+                                    <option value="1"></option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>   
+                                </select>
                                 <input type="text" placeholder="Post Title" name="postTitle">
                                 <textarea name="description" rows="4" placeholder="Description" name="description"></textarea>
                                 <input type="text" placeholder="Insert a link to your movie image url" name="movieImgUrl">
-                                <button><input type="submit"></button>
+                                <button type="submit" class="big-red">Post Review</button>
                             </form>     
                         </div>
                     </main>
