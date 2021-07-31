@@ -1,5 +1,4 @@
 const Post = require('../models/post');
-const Comment = require('../models/comment');
 
 module.exports = {
     create: createPost,
@@ -13,9 +12,11 @@ function createPost(req,res) {
 }
 
 function addComment(req, res, next) {
-    req.comment.push(req.body);
-    comment.save(function(err) {
-        res.redirect(`posts/${post._id}`);
+    Post.findById(req.params.id, function (err, post) {
+        post.comments.push(req.body);
+        post.save(function(err) {
+            res.redirect('back');
+        });
     });
 };
 
