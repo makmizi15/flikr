@@ -79,7 +79,10 @@
                             <textarea id="add-comment" name="comment" rows="8" placeholder="Share a comment:"></textarea>
                             <input class="form-btn absolute bottom-right" type="submit" value="Comment">
                         </form>
+                        
                     </div>
+
+                    
                     
                 
                 <div>
@@ -92,7 +95,12 @@
                         <li><div class="post-container margin-bottom-16">
                             <h5 class="margin-bottom-8"><%= c._id %></h5>
                             <p><%= c.comment %></p>
+                            <form action="/posts/<%= c._id %>?_method=DELETE" method="POST"> 
+                                <button type="submit">Delete Comment</button>
+                            </form> 
+                            
                         </div></li>
+                        
                         <% }); %>
                     </ul>
                     <% } else { %>

@@ -3,7 +3,10 @@ const Post = require('../models/post');
 module.exports = {
     create: createPost,
     addComment,
-    show
+    deleteComment,
+    show,
+    
+   
 
 };
 
@@ -11,7 +14,7 @@ function createPost(req,res) {
     res.render('posts/create', { user: req.user});
 }
 
-function addComment(req, res, next) {
+function addComment(req, res) {
     Post.findById(req.params.id, function (err, post) {
         post.comments.push(req.body);
         post.save(function(err) {
@@ -19,6 +22,15 @@ function addComment(req, res, next) {
         });
     });
 };
+
+function deleteComment(req, res) {
+    Post.findByIdAndDelete(req.params.id, function (err, post) {
+        if (err) console.log(err);
+        res.redirect('back');
+    });
+
+};
+
 
 
 // function addComment(req, res) {
