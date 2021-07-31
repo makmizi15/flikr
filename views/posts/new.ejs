@@ -84,9 +84,9 @@
 
                     <!-- ====== ADD COMMENT SECTION NEED HELP ======= -->
 
-                    <% if (post.length) { %>
+                    <% if (post.comment.length) { %>
                     <ul>
-                        <% post.forEach(function(c) { %>
+                        <% post.comment.forEach(function(c) { %>
                         <li><div class="post-container margin-bottom-16">
                             <h5 class="margin-bottom-8"><%= c.username %></h5>
                             <p><%= c.comment %></p>
