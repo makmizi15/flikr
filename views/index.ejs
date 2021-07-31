@@ -75,7 +75,7 @@
 
                                         <!-- ========= HOW TF DO WE FIND THE USERNAME???? ========= -->
 
-                                        <h5 class="username"><%= c._id %></h5>
+                                        <h5 class="username"><%= user.email %></h5>
 
                                         <!-- ========= HOW TF DO WE FIND THE USERNAME???? ========= -->
 
@@ -84,8 +84,6 @@
                                     <h2 class="movie-title"><%= c.movieTitle %></h2>
                                     <p class="rating"><%= c.rating %></p>
                                     <p class="post-title"><%= c.postTitle %></p>
-
-                                    <!-- How do we set a max length to description? -->
 
                                     <p><%= c.description.substring(0, 152) %>...</p>
                                     <div class="post-btns-container">
