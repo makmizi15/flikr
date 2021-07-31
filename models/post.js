@@ -15,7 +15,7 @@ const postSchema = new Schema({
     comments: [commentSchema],
     likeCount: Number,
     postedBy: {type: Schema.Types.ObjectId, ref: "User"},
-    movieImgURL: { type: String},
+    movieImgURL: { type: String, default: 'https://www.brownweinraub.com/wp-content/uploads/2017/09/placeholder.jpg'}
 
 }, {
     timestamps: true
