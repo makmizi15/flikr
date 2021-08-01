@@ -3,8 +3,6 @@ const Post = require('../models/post');
 module.exports = {
     create: createPost,
     addComment,
-    deleteComment,
-    editComment,
     show
 };
 
