@@ -9,4 +9,5 @@
     <li>Google OAuth</li>
 </ul>
 <h2>Authors</h2>
-<p>Makai Harris <br> GitHub: https://github.com/makmizi15 </p>
+<p>Makai Harris <br> GitHub: https://github.com/makmizi15</p>
+<p>Chris Pham <br> GitHub: https://github.com/cpham120195</p>
