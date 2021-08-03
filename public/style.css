@@ -65,6 +65,13 @@
             line-height: 1;
             margin-bottom: 24px;
         }
+        h4 {
+            font-family: neue-haas-grotesk-display, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 20px;
+            line-height: 1;
+        }
 
         p {
             color: var(--p);
@@ -80,17 +87,19 @@
 
         button {
             padding: 8px 12px;
-            border: 1px solid var(--white);
             border-radius: 999px;
-            background-color: transparent;
+            background: rgba( 255, 255, 255, 0.25 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 4px );
+            -webkit-backdrop-filter: blur( 4px );
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
             color: var(--white);
             cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.22,0.61,0.36,1);
         }
 
         button:hover {
-            background-image: url('/public/images/mesh-gradient.png');
-            background-size: cover;
-            background-position: center;
+            transform: scale(1.025);
         }
 
         ul {
@@ -202,23 +211,14 @@
             border-radius: 999px;
             width: 36px;
             height: 36px;
-            background-image: url('/public/images/100.\ Chetwode\ Blue.png');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
             font-size: 24px;
-            border: none;
             line-height: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: transform 0.3s cubic-bezier(0.22,0.61,0.36,1);
+            
 
 
-        }
-
-        .add-post-btn:hover {
-            transform: scale(.9);
         }
 
         .add-post-btn img {

@@ -50,7 +50,9 @@ function deleteComment(req, res){
 
 function updateComment(req, res){
     Post.findById(req.params.id, function(err, post){
-        post.comments.id(req.params.commentId).update(req.body);
+        console.log("clg", req.body);
+        let c = post.comments.id(req.params.commentId);
+        c.comment = req.body.edit;
         post.save(function (err){
             if(err){
                 console.log(err)
