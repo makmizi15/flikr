@@ -91,7 +91,11 @@
                             <h5 class="margin-bottom-8"><%= c._id %></h5>
                             <p><%= c.comment %></p>
                             <form action="/posts/<%= post._id %>/comments/<%= c._id %>?_method=DELETE" method="POST"> 
-                                <button type="submit">Delete Comment</button>
+                                <button type="submit">Delete</button>
+                            </form>
+                            <form action="/posts/<%= post._id %>/comments/<%= c._id %>?_method=PUT" method="POST"> 
+                                <input type="text" name="edit" placeholder="edit comment">
+                                <button type="submit">Edit</button>
                             </form> 
                             
                         </div></li>

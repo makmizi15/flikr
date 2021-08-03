@@ -3,7 +3,7 @@ const User = require('../models/user')
 
 module.exports = {
     index,
-    create
+    create,
 };
 
 function index(req,res) {
@@ -29,3 +29,4 @@ function create(req, res) {
         res.redirect('/');
     });
 }
+

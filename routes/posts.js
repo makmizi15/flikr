@@ -5,6 +5,8 @@ const postCtrl = require('../controllers/posts');
 router.get('/create', isLoggedIn, postCtrl.create);
 router.get('/:id', isLoggedIn, postCtrl.show);
 router.post('/:id', isLoggedIn, postCtrl.addComment);
+router.delete('/:id/comments/:commentId', isLoggedIn, postCtrl.deleteComment);
+router.put('/:id/comments/:commentId', isLoggedIn, postCtrl.updateComment);
 
 
 function isLoggedIn(req, res, next) {
