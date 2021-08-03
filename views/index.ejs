@@ -58,11 +58,13 @@
             </nav>
 
             <main>
-                <div class="add-post-container margin-bottom-24">
-                    <h4>Create a Review</h4>
-                    <button class="add-post-btn" onclick="location.href='http://localhost:4000/posts/create'"><img src="/public/images/noun_Plus_2310572.svg"></button>
+                <a href="/posts/create">
+                    <div class="add-post-container margin-bottom-24">
+                        <button class="add-post-btn"><img src="/public/images/noun_Plus_2310572.svg"></button>
+                        <h4>Create a Review</h4>
 
-                </div>
+                    </div>
+                </a>
                 <% if (post.length) { %>
                 <ul>
                     <% post.forEach(function(c) { %>

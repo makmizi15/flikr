@@ -72,7 +72,7 @@
                     <div class="post-container margin-bottom-16">
                         <form id="add-comment-form" method="POST" action="/posts/<%= post._id %>">
                             <textarea id="add-comment" name="comment" rows="8" placeholder="Share a comment:"></textarea>
-                            <input class="form-btn absolute bottom-right" type="submit" value="Comment">
+                            <button class="absolute bottom-right" type="submit" value="Comment">Comment</button>
                         </form>
                         
                     </div>
@@ -90,13 +90,31 @@
                         <li><div class="post-container margin-bottom-16">
                             <h5 class="margin-bottom-8"><%= c._id %></h5>
                             <p><%= c.comment %></p>
-                            <form action="/posts/<%= post._id %>/comments/<%= c._id %>?_method=DELETE" method="POST"> 
-                                <button type="submit">Delete</button>
+                            <div class="flex-bottom">
+                                <form action="/posts/<%= post._id %>/comments/<%= c._id %>?_method=DELETE" method="POST"> 
+                                <button class="comment-btns margin-top-16" type="submit">Delete</button>
                             </form>
+                            <button class="comment-btns" id="myBtn" onclick="document.getElementById('myModal').classList.add('active')">Edit</button>
+                            
+
+                        </div>
+                                               
+                        
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close margin-bottom-24" onclick="document.getElementById('myModal').classList.remove('active')">&times;</span>
                             <form action="/posts/<%= post._id %>/comments/<%= c._id %>?_method=PUT" method="POST"> 
-                                <input type="text" name="edit" placeholder="edit comment">
-                                <button type="submit">Edit</button>
-                            </form> 
+                                <label><h4>Edit your comment</h4></label>
+                                <textarea class="popup-form" id="add-edit" name="edit" rows="8" placeholder="<%= c.comment %>"></textarea>
+                                <button onsubmit="document.getElementById('myModal').classList.remove('active')" class="margin-top-16" type="submit">Submit Changes</button>
+                            </form>
+                        </div>
+
+                        </div>   
                             
                         </div></li>
                         
@@ -105,7 +123,7 @@
                     <% } else { %>
                         <div class="post-container">
                             <div class="post-copy">
-                                <h2 class="margin-bottom-8">No Comments Yet</h2>
+                                <h4 class="margin-bottom-8">No Comments Yet</h4>
                             </div>
                         </div>
                     <% } %>
@@ -115,6 +133,7 @@
             </main>
         </div>
     </div>
+
 </body>
 
 </html>
